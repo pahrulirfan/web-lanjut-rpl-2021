@@ -12,4 +12,8 @@ class Welcome extends CI_Controller {
 	{
 		echo 'tambahan fungsi';
 	}
+
+	public function maripulang(){
+		echo 'horreee';
+	}
 }
