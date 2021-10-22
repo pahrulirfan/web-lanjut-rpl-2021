@@ -8,7 +8,8 @@ class Welcome extends CI_Controller {
 		$this->load->view('welcome_message');
 	}
 
-	public function tentangKami(){
-		echo 'tentang kami';
+	public function kedua()
+	{
+		echo 'tambahan fungsi';
 	}
 }
