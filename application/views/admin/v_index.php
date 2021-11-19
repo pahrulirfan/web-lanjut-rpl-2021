@@ -13,6 +13,8 @@
 
 <div class="container">
 
+<a href="<?=site_url('backend/tambah')?>" class="btn btn-info">Tambah Data</a> <hr>
+
 	<table class="table">
 		<thead>
 			<tr>

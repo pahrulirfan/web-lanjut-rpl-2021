@@ -10,8 +10,25 @@ class Backend extends CI_Controller
 
 	public function index()
 	{
-		$data['isi'] = $this->Siswa->semua();
+		$data['isi'] = $this->Siswa->semuadata();
 
 		return $this->load->view('admin/v_index', $data);
+	}
+
+	public function tambah(){
+		return $this->load->view('admin/v_tambah');
+	}
+
+	public function proses_tambah(){
+
+		$data_input = array(
+			'nis' => $this->input->post('txtnis'),
+			'nama' => $this->input->post('txtnama'),
+			'alamat' => $this->input->post('txtalamat'),
+		);
+
+		// var_dump($data_input);
+		$this->Siswa->simpan_ke_database($data_input);
+		redirect(site_url('backend/index'));
 	}
 }
