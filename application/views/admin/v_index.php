@@ -11,35 +11,42 @@
 
 <body>
 
-<div class="container">
+	<div class="container">
 
-<a href="<?=site_url('backend/tambah')?>" class="btn btn-info">Tambah Data</a> <hr>
+		<a href="<?= site_url('backend/tambah') ?>" class="btn btn-info mt-2">Tambah Data</a>
+		<hr>
 
-	<table class="table">
-		<thead>
-			<tr>
-				<th>No</th>
-				<th>NIS</th>
-				<th>Nama</th>
-				<th>Alamat</th>
-			</tr>
-		</thead>
-		<tbody>
-			<?php
-			$no = 1;
-			foreach ($isi as $row) {
-			?>
+		<table class="table">
+			<thead>
 				<tr>
-					<td> <?=$no++; ?> </td>
-					<td> <?=$row->nis; ?> </td>
-					<td> <?=$row->nama; ?> </td>
-					<td> <?=$row->alamat; ?> </td>
+					<th>No</th>
+					<th>NIS</th>
+					<th>Nama</th>
+					<th>Alamat</th>
+					<th>Aksi</th>
 				</tr>
-			<?php
-			}
-			?>
-		</tbody>
-	</table>
+			</thead>
+			<tbody>
+				<?php
+				$no = 1;
+				foreach ($isi as $row) {
+				?>
+					<tr>
+						<td> <?= $no++; ?> </td>
+						<td> <?= $row->nis; ?> </td>
+						<td> <?= $row->nama; ?> </td>
+						<td> <?= $row->alamat; ?> </td>
+						<td>
+							<a onclick="return confirm('Anda Yakin ?')"  href="<?= site_url('backend/hapus/' . $row->id) ?>" class="btn btn-danger">Del</a>
+
+							<a href="<?= site_url('backend/edit/' . $row->id) ?>" class="btn btn-warning">Edit</a>
+						</td>
+					</tr>
+				<?php
+				}
+				?>
+			</tbody>
+		</table>
 
 </body>
 
