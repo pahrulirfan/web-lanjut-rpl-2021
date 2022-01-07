@@ -16,4 +16,9 @@ class Siswa extends CI_Model
 	{
 		$this->db->delete('siswa', ['id' => $id]);
 	}
+
+	public function satu_data($id)
+	{
+		return $this->db->where(['id' => $id])->get('siswa')->row_object();
+	}
 }

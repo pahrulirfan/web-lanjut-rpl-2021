@@ -44,4 +44,10 @@ class Backend extends CI_Controller
 		redirect(site_url('backend/index'));
 	}
 
+	public function edit($id)
+	{
+		$data['isi'] = $this->Siswa->satu_data($id);
+		
+		return $this->load->view('admin/v_edit', $data);
+	}
 }
